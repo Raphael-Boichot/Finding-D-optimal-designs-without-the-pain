@@ -14,7 +14,7 @@ The code itself comes from a loose implementation inspired from [this document](
 ## 31 parameters, 32 experiments, nearly D-optimal, nearly orthogonal (+1/-1 levels)
 ![](Pictures/Figure_incomplete.png)
 
-## 5 parameters, 32 experiments, factorial design retrieved by the code
+## 5 parameters, 64 experiments, factorial design retrieved by the code
 ![](Pictures/Figure_factorial.png)
 
 ## Side note
