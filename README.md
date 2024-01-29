@@ -14,5 +14,8 @@ The code itself comes from a loose implementation inspired from [this document](
 ## 31 parameters, 32 experiments, nearly D-optimal, nearly orthogonal (+1/-1 levels)
 ![](Pictures/Figure_incomplete.png)
 
+## 5 parameters, 32 experiments, factorial design retrieved by the code
+![](Pictures/Figure_factorial.png)
+
 ## Side note
 The way the code is implemented allows very easy modification for adding constraints, other type of optimality, extension to mixture designs, etc. Have fun with it. Maybe one day it will be extended to three or five levels design, maybe.
