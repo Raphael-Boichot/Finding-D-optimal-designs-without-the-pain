@@ -6,7 +6,7 @@ The code generally converges readily for variance/covariance matrix of order 16 
 
 The code itself is a loose implementation of [this algorithm](Triefenbach%20(2008)%20The%20D-Optimal%20Approach%20and%20Its%20Implementation%20As%20a%20Computer%20Algorithm.pdf). It tries random substitution of +1/-1 from randomly generated matrices having the same number of +1 and -1 levels for each independant parameter. I ended to this short and efficient code after many attempts with more complicated optimizations techniques that did not worked as well.
 
-Please cite the source in case you use this code !
+**Please cite the source in case you use this code.**
 
 ## Example of a converged case, optimal design
 ![](Pictures/Figure_converged.png)
@@ -15,4 +15,4 @@ Please cite the source in case you use this code !
 ![](Pictures/Figure_incomplete.png)
 
 ## Side note
-The way the code is done allows very easy modification for adding constraints, other type of optimality, extension to mixture designs, etc.
+The way the code is implemented allows very easy modification for adding constraints, other type of optimality, extension to mixture designs, etc. Have fun with it. Maybe one day it will be extended to three or five levels design, maybe.
