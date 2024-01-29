@@ -8,10 +8,10 @@ The code itself comes from a loose implementation inspired from [this document](
 
 **Please cite the source in case you use this code.**
 
-## Example of a converged case, optimal design
+## Example of a converged case, optimal design (+1/-1 levels)
 ![](Pictures/Figure_converged.png)
 
-## Example of a non-converged case, sub-optimal design
+## Example of a non-converged case, sub-optimal design (+1/-1 levels)
 ![](Pictures/Figure_incomplete.png)
 
 ## Side note
