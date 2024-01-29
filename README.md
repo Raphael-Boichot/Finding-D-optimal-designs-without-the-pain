@@ -11,7 +11,7 @@ The code itself comes from a loose implementation inspired from [this document](
 ## 15 parameters, 16 experiments, D-optimal, orthogonal (+1/-1 levels)
 ![](Pictures/Figure_converged.png)
 
-## 31 parameters, 32 experiments, sub D-optimal, nearly-orthogonal (+1/-1 levels)
+## 31 parameters, 32 experiments, nearly D-optimal, nearly orthogonal (+1/-1 levels)
 ![](Pictures/Figure_incomplete.png)
 
 ## Side note
