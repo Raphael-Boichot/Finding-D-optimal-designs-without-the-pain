@@ -14,3 +14,5 @@ Please cite the source in case you use this code !
 ## Example of a non-converged case, sub-optimal design
 ![](Pictures/Figure_incomplete.png)
 
+## Side note
+The way the code is done allows very easy modification for adding constraints, other type of optimality, extension to mixture designs, etc.
