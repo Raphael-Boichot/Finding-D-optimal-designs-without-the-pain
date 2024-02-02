@@ -14,7 +14,7 @@ disp(['Test case log10(determinant)=',num2str(log10(det(H'*H)))])
 
 %Initialization
 rng('shuffle', 'twister')
-figure('Position',[100 100 1000 400]);
+figure('Position',[100 100 1400 400]);
 colormap hot
 
 Matrix_best=2*(rand(Number_of_experiments, Number_of_parameters,1)>0.5)-1;
@@ -35,13 +35,18 @@ while End_flag==1
             Matrix_best=Matrix;
             disp(['Better configuration found, Log10 det=',num2str(log10(det(Matrix_best'*Matrix_best))), ', Batch=',num2str(g)])
 
-            subplot(1,2,1);
+            subplot(1,3,1);
             imagesc(Matrix_best'*Matrix_best);
             title('variance/covariance matrix');
 
-            subplot(1,2,2);
+            subplot(1,3,2);
             imagesc(Matrix_best);
             title('Best matrix');
+
+            subplot(1,3,3);
+            imagesc(Matrix_best*(Matrix_best'*Matrix_best)^-1*Matrix_best');
+            title('Projection matrix');
+
             saveas(gcf,'Figure.png');
             save Best_matrix.txt Matrix_best -ascii
         end
