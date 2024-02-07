@@ -1,4 +1,4 @@
-# Finding D-optimal designs without the pain
+## Finding D-optimal designs without the pain
 
 This Matlab code is intended to find D-optimal and orthogonal designs from an unspecified number of independant parameters in order to design experimental campaigns. It's very easy to use: enter the number of experiments planned and the number of independant parameters of your study. The code will try to find an optimal design for these conditions. We mean by "optimal" the fact that the [variance/covariance matrix](https://en.wikipedia.org/wiki/Covariance_matrix) of the experiments has the maximal possible determinant while being [orthogonal](https://en.wikipedia.org/wiki/Orthogonal_matrix) at the same time. It is fully optimal when the extra-diagonal terms of the variance/covariance matrix are null and the diagonal terms equals. Other configurations are only sub-optimal but still usable with not much risks.
 
