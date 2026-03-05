@@ -1,6 +1,6 @@
 function [] = D_matrix_optimizer(Number_of_experiments, Number_of_parameters)
 
-size_of_a_batch=512;       %number of jobs treated simultaneously in parallel
+size_of_a_batch=100;       %number of jobs treated simultaneously in parallel
 output_file=[num2str(Number_of_experiments),'experiments_',num2str(Number_of_parameters),'parameters'];
 %test case
 H=hadamard(16);
