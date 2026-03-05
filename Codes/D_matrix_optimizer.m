@@ -49,9 +49,9 @@ while End_flag==1
         end
     end
 
-    if not(checkDiagDominance(hat_matrix))
+    if not(checkDiagDominance(hat_matrix))%basically you can enter your optimality criterion here
         Matrix_best=rand(Number_of_experiments,Number_of_parameters); %destroy if not diagonal dominant
-    else
+    else %accept and ends the code
         cov=Matrix_best'*Matrix_best;
         if sum(abs(sum(cov-diag(diag(cov)))))==0
             End_flag=0;
