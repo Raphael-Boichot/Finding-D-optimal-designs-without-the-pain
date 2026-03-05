@@ -7,16 +7,16 @@ The code generally converges readily for variance/covariance matrix of order 16 
 The code itself comes from a loose implementation inspired from [this document](Triefenbach%20(2008)%20The%20D-Optimal%20Approach%20and%20Its%20Implementation%20As%20a%20Computer%20Algorithm.pdf). It tries random substitution of +1/-1 from randomly generated matrices having the same number of +1 and -1 levels for each independant parameter. In other words, this is a constrained brute-force algorithm. I ended to this short and efficient code after many attempts with more complicated optimizations techniques that did not worked as well (for example genetic algorithms). Anyway, **please cite the source in case you use this code.**
 
 ## 15 parameters, 16 experiments, D-optimal, orthogonal (+1/-1 levels)
-![](Code/16experiments_15parameters.png)
+![](Codes/16experiments_15parameters.png)
 
 ## 19 parameters, 20 experiments, D-optimal, orthogonal (+1/-1 levels)
-![](Pictures/20experiments_19parameters.png)
+![](Codes/20experiments_19parameters.png)
 
 ## 4 parameters, 16 experiments, factorial design retrieved by the code (+1/-1 levels)
-![](Pictures/16experiments_4parameters.png)
+![](Codes/16experiments_4parameters.png)
 
 ## 5 parameters, 32 experiments, factorial design retrieved by the code (+1/-1 levels)
-![](Pictures/32experiments_5parameters.png)
+![](Codes/32experiments_5parameters.png)
 
 ## Side note
 The way the code is implemented allows very easy modification for adding constraints, other type of optimality, extension to mixture designs, etc. Have fun with it. Maybe one day it will be extended to three or five levels design, maybe.
