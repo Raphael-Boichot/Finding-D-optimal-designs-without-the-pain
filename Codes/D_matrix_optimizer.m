@@ -1,6 +1,6 @@
 function [] = D_matrix_optimizer(Number_of_experiments, Number_of_parameters)
 
-size_of_a_batch=100;       %number of jobs treated simultaneously in parallel
+size_of_a_batch=16;       %number of jobs treated simultaneously in parallel
 output_file=[num2str(Number_of_experiments),'experiments_',num2str(Number_of_parameters),'parameters'];
 %test case
 H=hadamard(16);
@@ -18,7 +18,7 @@ g=0;
 while End_flag==1
     g=g+1;
 
-    disp(['Sending a batch of ',num2str(size_of_a_batch),' matrices to evaluate in parallel...'])
+    disp(['#',num2str(g),' batch of ',num2str(size_of_a_batch),' matrices to evaluate in parallel...'])
     parfor i=1:size_of_a_batch
         [Matrix_batch(:,:,i)]=generate_matrices(Number_of_experiments, Number_of_parameters);
     end
@@ -26,8 +26,9 @@ while End_flag==1
 
     for i=1:size_of_a_batch
         Matrix=Matrix_batch(:,:,i);
-        if det(Matrix'*Matrix)>det(Matrix_best'*Matrix_best)
-            Matrix_best= sortrows(Matrix, size(Matrix,2):-1:1, 'descend');
+        hat_matrix=Matrix/(Matrix'*Matrix)*Matrix';
+        if det(Matrix'*Matrix)>det(Matrix_best'*Matrix_best) && checkDiagDominance(hat_matrix)
+            Matrix_best= Matrix;
             disp(['Better configuration found, Log10 det=',num2str(log10(det(Matrix_best'*Matrix_best))), ', Batch=',num2str(g)])
 
             subplot(1,3,1);
@@ -48,16 +49,11 @@ while End_flag==1
             save(filename, 'Matrix_best', '-ascii');
         end
     end
-
-    if not(checkDiagDominance(hat_matrix))%basically you can enter your optimality criterion here
-        Matrix_best=rand(Number_of_experiments,Number_of_parameters); %destroy if not diagonal dominant
-    else %accept and ends the code
-        cov=Matrix_best'*Matrix_best;
-        if sum(abs(sum(cov-diag(diag(cov)))))==0
-            End_flag=0;
-            disp('End of optimization, best matrix found:')
-            Matrix_best
-        end
+    cov=Matrix_best'*Matrix_best;
+    if sum(abs(sum(cov-diag(diag(cov)))))==0
+        End_flag=0;
+        disp('End of optimization, best matrix found:')
+        Matrix_best
     end
 end
 
