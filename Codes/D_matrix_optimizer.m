@@ -29,6 +29,7 @@ while End_flag==1
         hat_matrix=Matrix/(Matrix'*Matrix)*Matrix';
         if det(Matrix'*Matrix)>det(Matrix_best'*Matrix_best) && checkDiagDominance(hat_matrix)
             Matrix_best= Matrix;
+            Matrix_best= sortrows(Matrix_best, size(Matrix_best,2):-1:1, 'descend');
             disp(['Better configuration found, Log10 det=',num2str(log10(det(Matrix_best'*Matrix_best))), ', Batch=',num2str(g)])
 
             subplot(1,3,1);
